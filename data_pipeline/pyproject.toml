@@ -7,8 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "~3.11"
-awswrangler = "3.4.2"
 aws-lambda-powertools = "2.30.2"
+awswrangler = "3.4.2"
+great-expectations = "0.18.7"
 
 
 [tool.poetry.group.dev.dependencies]
