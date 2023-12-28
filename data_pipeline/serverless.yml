@@ -1,0 +1,53 @@
+service: dataPipeline
+
+
+frameworkVersion: '3'
+
+provider:
+  stackName: ${self:custom.stage}-data-pipeline
+  versionFunctions: false
+  name: aws
+  timeout: 900
+  ecr:
+    images:
+      data-pipeline:
+        path: ./
+  region: ${file(./config/${self:custom.stage}.yml):region}
+  logRetentionInDays: 7
+  iam:
+    role:
+      tags:
+      name: ${self:custom.stage}-${self:service}
+      statements:
+        - Effect: Allow
+          Action:
+            - "s3:*"
+            - "glue:*"
+            - "athena:*"
+            - "logs:*"
+            - "cloudwatch:*"
+          Resource:
+            - "*"
+        - Effect: Allow
+          Action:
+            - "ecr:BatchGetImage"
+            - "ecr:GetDownloadUrlForLayer"
+          Resource:
+            - "arn:aws:ecr:*:*:repository/*"
+  deploymentBucket:
+    name: ${file(./config/${self:custom.stage}.yml):deploy_bucket}
+  environment: ${file(./config/${self:custom.stage}.yml):env_vars}
+
+functions:
+  sampleFunction:
+    description: Sample Serverless Function
+    name: ${self:service}-${self:custom.stage}-sample-function
+    image:
+      name: data-pipeline
+      command:
+        - functions/sample_function.process_data_file
+      entryPoint:
+        - "/lambda-entrypoint.sh"
+
+custom:
+  stage: ${opt:stage, 'development'}

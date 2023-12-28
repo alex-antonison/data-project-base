@@ -1,0 +1,43 @@
+repos:
+    # global project config
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.4.0
+      hooks:
+        - id: trailing-whitespace
+        - id: detect-aws-credentials
+        - id: check-added-large-files
+        - id: check-yaml
+        - id: detect-private-key
+
+    # infrastructure
+    - repo: https://github.com/antonbabenko/pre-commit-terraform
+      rev: v1.81.0
+      hooks:
+      - id: terraform_fmt
+        files: ^infrastructure/
+      - id: terraform_validate
+        files: ^infrastructure/
+
+    - repo: https://github.com/terraform-docs/terraform-docs
+      rev: "v0.16.0"
+      hooks:
+      - id: terraform-docs-go
+        args: ["--config", ".terraform-docs.yml", "./infrastructure/tf/modules/"]
+        files: ^infrastructure/
+
+    # python config
+    - repo: https://github.com/pycqa/isort
+      rev: 5.13.2
+      hooks:
+      - id: isort
+        types: [python]
+    - repo: https://github.com/ambv/black
+      rev: 23.12.1
+      hooks:
+      - id: black
+        types: [python]
+    - repo: https://github.com/pycqa/flake8
+      rev: 6.1.0
+      hooks:
+      - id: flake8
+        types: [python]
