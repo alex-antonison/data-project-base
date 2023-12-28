@@ -22,7 +22,7 @@ repos:
       rev: "v0.16.0"
       hooks:
       - id: terraform-docs-go
-        args: ["--config", ".terraform-docs.yml", "./infrastructure/tf/"]
+        args: ["--config", ".terraform-docs.yml", "./infrastructure/tf/modules/"]
         files: ^infrastructure/
 
     # python config
