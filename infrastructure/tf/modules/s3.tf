@@ -73,3 +73,21 @@ resource "aws_s3_bucket_public_access_block" "data_lake" {
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
+
+######################
+# Serverless Resource Bucket
+######################
+
+
+resource "aws_s3_bucket" "serverless_resources" {
+  bucket = "${var.project_name}-serverless-${data.aws_caller_identity.current.account_id}"
+}
+
+resource "aws_s3_bucket_public_access_block" "serverless_resources" {
+  bucket = aws_s3_bucket.athena_workgroup_output.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
