@@ -1,4 +1,5 @@
 repos:
+    # global project config
     - repo: https://github.com/pre-commit/pre-commit-hooks
       rev: v4.4.0
       hooks:
@@ -8,6 +9,7 @@ repos:
         - id: check-yaml
         - id: detect-private-key
 
+    # infrastructure
     - repo: https://github.com/antonbabenko/pre-commit-terraform
       rev: v1.81.0
       hooks:
@@ -22,3 +24,20 @@ repos:
       - id: terraform-docs-go
         args: ["--config", ".terraform-docs.yml", "./infrastructure/tf/"]
         files: ^infrastructure/
+
+    # python config
+    - repo: https://github.com/pycqa/isort
+      rev: 5.13.2
+      hooks:
+      - id: isort
+        types: [python]
+    - repo: https://github.com/ambv/black
+      rev: 23.12.1
+      hooks:
+      - id: black
+        types: [python]
+    - repo: https://github.com/pycqa/flake8
+      rev: 6.1.0
+      hooks:
+      - id: flake8
+        types: [python]

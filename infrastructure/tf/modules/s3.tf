@@ -4,7 +4,7 @@
 
 
 resource "aws_s3_bucket" "athena_workgroup_output" {
-  bucket = "${local.project_name}-athena-work-group-output-${data.aws_caller_identity.current.account_id}"
+  bucket = "${var.project_name}-athena-work-group-output-${data.aws_caller_identity.current.account_id}"
 }
 
 resource "aws_s3_bucket_public_access_block" "athena_workgroup_output" {
@@ -34,7 +34,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "athena_workgroup_output_lifecy
 ######################
 
 resource "aws_s3_bucket" "raw_data" {
-  bucket = "${local.project_name}-raw-data-${data.aws_caller_identity.current.account_id}"
+  bucket = "${var.project_name}-raw-data-${data.aws_caller_identity.current.account_id}"
 }
 
 resource "aws_s3_bucket_public_access_block" "raw_data" {
@@ -62,7 +62,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "raw_data" {
 ######################
 
 resource "aws_s3_bucket" "data_lake" {
-  bucket = "${local.project_name}-data-lake-${data.aws_caller_identity.current.account_id}"
+  bucket = "${var.project_name}-data-lake-${data.aws_caller_identity.current.account_id}"
 }
 
 resource "aws_s3_bucket_public_access_block" "data_lake" {
