@@ -1,4 +1,4 @@
 locals {
   environment  = "development"
-  project_name = "project-name"
+  project_name = "de-sales-data-project"
 }
