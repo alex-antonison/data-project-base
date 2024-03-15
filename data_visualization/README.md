@@ -1,3 +1,3 @@
 # DE Sales Data Streamlit App
 
-See streamlit app [here](https://de-sales-data-project-daqhyjinrmwf6br9ws4f3y.streamlit.app/)
+See streamlit app [here](https://u20104524.ct.sendgrid.net/ls/click?upn=u001.YqX10OC7YA22c7xDm-2Fn4Rp8cKEG3XrysneyLRuUyfIKY5LaYQSOS2sW-2BUBbr4BEUMPfe8v167p2IhHJzPk0LJ87-2Bg4SRcQWUyJvUiNLL-2FAYH5Zr-2F9zO-2FkHjHEmZvaRwmP2LE_gvUCZU3DvWr1Pzvc5BnVlh44NyfecGSXrdLtmHkbejXahF4CJsWZVUfP6B4arY5M0wK1AtPsUNfTD4XQKHxNgHEccRjsEiC-2BAwEavm-2BkwFAV-2FE-2Bybesba2bqIxw49DUd1mcKoPMuJ1mLOmVGAZNn5s2CKaKo5QemJSnuwa-2BGiA644aR-2BpE3tZoehFlvw9fFW8d-2BQxVBewYSpT0-2B-2Fz6t2VLeYpf2vLbfdLQvDW0exNxkjpJmZeJzsNpA-2FjbZrf3HMmgR4jezc5XYmFHmiL-2FeMqDywASHgylnKnYXNVNhI2Avsszf2d83g8JsnScBWxbKgh2pdT796zO6bbiOFlCDRmg-3D-3D)
