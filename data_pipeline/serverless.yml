@@ -40,12 +40,12 @@ provider:
 
 functions:
   sampleFunction:
-    description: Sample Serverless Function
-    name: ${self:service}-${self:custom.stage}-sample-function
+    description: Processing Sales Data
+    name: ${self:service}-${self:custom.stage}-process-sales-data
     image:
       name: data-pipeline
       command:
-        - functions/sample_function.process_data_file
+        - functions/process_sales_data.process_sales_function
       entryPoint:
         - "/lambda-entrypoint.sh"
 
