@@ -13,5 +13,9 @@ def process_sales_data(event, context):
     df = remove_trailing_zeros_from_df(df)
     df = update_online_spend_with_quantity(df)
     df = total_spend(df)
-    df.to_csv("processed_file.csv", index=False)
+    wr.s3.to_parquet(df, "s3://de-sales-data-project-data-lake-146479615822/sales_data/processed_file.parquet")
     return {"status": "success", "message": "hello world"}
+
+
+    
+    
