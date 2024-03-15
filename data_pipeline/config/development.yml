@@ -1,5 +1,5 @@
 env_vars:
   LOG_THRESHOLD: DEBUG
-aws_account_id: 3146479615822
+aws_account_id: 146479615822
 region: "us-east-1"
 deploy_bucket: de-sales-data-project-serverless-146479615822
