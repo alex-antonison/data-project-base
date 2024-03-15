@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "data-visualization"
+version = "0.1.0"
+description = ""
+authors = ["David Jean <davidejeaniii@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+awswrangler = "^3.7.1"
+streamlit = "^1.32.2"
+plotly = "^5.20.0"
+watchdog = "^4.0.0"
+matplotlib = "^3.8.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
