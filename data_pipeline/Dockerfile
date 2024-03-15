@@ -13,7 +13,6 @@ COPY data-processing-config/ ${FUNCTION_DIR}/data-processing-config/
 RUN pip install poetry
 
 # Install python dependencies for function
-COPY poetry.lock pyproject.toml  ${FUNCTION_DIR}/
+COPY requirements.txt  ${FUNCTION_DIR}/
 
-RUN poetry config virtualenvs.create false \
-  && poetry install --no-interaction --no-ansi --without dev
+RUN pip install -r requirements.txt
